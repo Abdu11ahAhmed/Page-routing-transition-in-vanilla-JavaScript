@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="description"content="Page routing transition in vanilla JavaScript"/><link rel="stylesheet" href="style.css" /><title>Page routing transition in vanilla JavaScript</title></head><body><div class="section1"><h2>Page routing transition in vanilla JavaScript Try go to the Last page</h2><br /><a id="lastPage">Last Page →</a></div><div class="transition"></div><div class="tro"></div><script>
+const transition = document.querySelector(".transition");
+const lastPage = document.getElementById("lastPage");
+
+let currect = false;
+lastPage.onclick = function (event) {
+  transition.style.opacity = "1";
+  transition.style.transition = ".5s ease";
+  setTimeout(function () {
+    currect = true;
+    window.open("./index.html", "_self");
+  }, 500);
+  if (currect === false) {
+    event.preventDefault();
+  }
+};</script></body></html>
